@@ -84,14 +84,10 @@
           </a>
           <ul id="dropdown-animated" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
             <li *ngFor="let child of item.childs">
-              <a class="dropdown-item" [routerLink]="'/category/1'">
+              <a class="dropdown-item" [routerLink]="'/category/' + child.id">
                 {{child.text}}
                 <img src="assets/images/icons/black_arrow-left.svg" alt="" *ngIf="child.childs">
               </a>
-              <!-- <a class="dropdown-item" [routerLink]="'/category/' + child.id">
-                {{child.text}}
-                <img src="assets/images/icons/black_arrow-left.svg" alt="" *ngIf="child.childs">
-              </a> -->
               <ul class="dropdown-menu dropdown-submenu" *ngIf="child?.childs?.length! > 0">
                 <li *ngFor="let childChild of child?.childs">
                   <a class="dropdown-item">{{childChild.text}}</a>

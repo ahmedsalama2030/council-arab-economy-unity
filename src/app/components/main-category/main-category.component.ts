@@ -45,7 +45,8 @@ export class MainCategoryComponent extends AppComponentBase implements OnInit {
 
   GetPostByHeaderLanding() {
     this.mainService.GetPostByHeaderLanding(this.categoryId).subscribe((posts: any) => {
-      this.posts.push(posts.data)
+      // this.posts.push(posts.data)
+      this.posts = posts.data
     })
   }
 
