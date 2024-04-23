@@ -1,25 +1,31 @@
 import { Component, Injector, OnInit } from '@angular/core';
-import * as jsonData from '../../../../assets/site.json'
+import * as jsonData from '../../../../assets/site.json';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Posts } from 'src/app/shared/models/posts';
 import { MainService } from 'src/app/shared/services/main.service';
 import { AppComponentBase } from 'src/app/shared/app-component-base';
+import { environment } from 'src/environments/environment.development';
 
 @Component({
   selector: 'app-category-details',
   templateUrl: './category-details.component.html',
-  styleUrls: ['./category-details.component.scss']
+  styleUrls: ['./category-details.component.scss'],
 })
-export class CategoryDetailsComponent extends AppComponentBase implements OnInit {
-
+export class CategoryDetailsComponent
+  extends AppComponentBase
+  implements OnInit
+{
   categoryId!: number;
   post!: Posts | undefined;
+  images: any = environment.images;
 
   constructor(
     injector: Injector,
-    private activatedRoute: ActivatedRoute, private mainService: MainService) {
-      super(injector)
-    this.categoryId = Number(this.activatedRoute.snapshot.params['categoryId'])
+    private activatedRoute: ActivatedRoute,
+    private mainService: MainService
+  ) {
+    super(injector);
+    this.categoryId = Number(this.activatedRoute.snapshot.params['categoryId']);
   }
 
   ngOnInit(): void {
@@ -28,13 +34,14 @@ export class CategoryDetailsComponent extends AppComponentBase implements OnInit
     // articleIndex = this.articles.articles.findIndex((post: any) => post.id == this.categoryId)
     // this.article = this.articles.articles[articleIndex]
     // console.log(this.article);
-    this.GetPostIdLanding()
+    this.GetPostIdLanding();
   }
 
   GetPostIdLanding() {
-    this.mainService.GetPostIdLanding(this.categoryId).subscribe((post: any) => {
-      this.post = post.data
-    })
+    this.mainService
+      .GetPostIdLanding(this.categoryId)
+      .subscribe((post: any) => {
+        this.post = post.data;
+      });
   }
-
 }

@@ -2,8 +2,9 @@
 <div class="home-page">
   <div class="box">
     <ul class="post-box">
-      <li *ngFor="let post of postItems.posts">
-        {{post.details}}
+      <li *ngFor="let post of headers">
+      <div class="inline p-0 m-0" [innerHTML]="isDirRTL ? post?.titleAr : post?.titleEn"></div>
+
       </li>
       <!-- Add more posts as needed -->
     </ul>

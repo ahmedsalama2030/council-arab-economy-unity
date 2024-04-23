@@ -1,18 +1,20 @@
 <div class="main-category-page">
   <div class="container">
     <div class="row">
-      <div *ngFor="let post of posts" [ngClass]="{'col-md-12' : posts.length == 1, 'col-md-6': posts.length == 2, 'col-md-4': posts.length >= 3}" class="col-md-12">
+      <!-- [ngClass]="{'col-md-3' : posts.length == 1, 'col-md-3': posts.length == 2, 'col-md-3': posts.length >= 3}" -->
+      <div *ngFor="let post of posts"  [ngClass]="{'col-md-5' : posts.length == 1, 'col-md-4': posts.length == 2, 'col-md-3': posts.length >= 3}"class="col-md-3">
         <div class="post">
-          <div class="header">
-            <h2>{{ isDirRTL ? post?.titleAr : post.titleEn }}</h2>
-          </div>
+          <div class="header my-3">
+
+           </div>
           <div class="content">
             <div class="img">
-              <img src="assets/images/ghaza.jpg" alt="">
+              <img class="rounded" style="height: 300px;" [src]="images+post.url" [alt]="post.id">
               <!-- <img [src]="post.imageUrl" alt=""> -->
             </div>
             <div class="overlay"></div>
-            <span class="title">{{ isDirRTL ? post?.titleAr : post.titleEn }}</span>
+            <div class="title" [innerHTML]="isDirRTL ? post?.titleAr : post.titleEn"></div>
+
           </div>
           <div class="article-details">
             <div class="article-header">
@@ -28,14 +30,14 @@
                 <div class="img">
                   <img src="assets/images/time.png" alt="">
                 </div>
-                <span>{{post?.datePublish}}</span>
+                <span>{{post?.datePublish | date:"HH:mm yyyy-MM-dd "}}</span>
               </div>
             </div>
             <div class="article-content">
               <p>{{article?.details}}</p>
             </div>
             <div class="article-footer">
-              <button class="readMore" [routerLink]="'/category/' + post.id + '/details'">read more</button>
+              <button class="readMore" [routerLink]="'/category/' + post.id + '/details'">{{'ReadMe' | translate}}</button>
             </div>
           </div>
         </div>

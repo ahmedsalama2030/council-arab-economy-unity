@@ -56,11 +56,11 @@
           {{'Home' | translate}}
         </a>
       </li>
-      <li class="nav-item">
+      <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="'/general-secretary'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
           {{'General Secretary' | translate}}
         </a>
-      </li>
+      </li> -->
       <ng-container *ngFor="let item of menuItems">
         <li class="nav-item" *ngIf="item.childs.length == 0">
           <a class="nav-link" [routerLink]="'/'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
@@ -69,10 +69,10 @@
         </li>
         <li class="nav-item dropdown" dropdown *ngIf="item.childs.length > 0">
           <a
-            dropdownToggle 
-            class="nav-link dropdown-toggle" 
-            id="dropdownMenuButton" 
-            data-mdb-toggle="dropdown" 
+            dropdownToggle
+            class="nav-link dropdown-toggle"
+            id="dropdownMenuButton"
+            data-mdb-toggle="dropdown"
             aria-expanded="false"
             aria-controls="dropdown-animated">
             <span (click)="toggleItem($event)">{{item.text}}</span>
@@ -80,7 +80,7 @@
               <g id="Medium/chevron-left">
                 <path id="Icon" d="M18.9321 9L12.9321 15L6.93213 9" stroke="#484C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
               </g>
-            </svg>          
+            </svg>
           </a>
           <ul id="dropdown-animated" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
             <li *ngFor="let child of item.childs">
