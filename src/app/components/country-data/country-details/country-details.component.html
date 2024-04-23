@@ -1,0 +1,77 @@
+<div class="country-details">
+  <div class="container">
+    <div class="flex flex-col ai-c gap-20 my-20">
+      <h2>{{ isDirRTL ? country.nameAr : country.nameEn }}</h2>
+      <div class="logo">
+        <div class="img">
+          <img [src]="country.logo" alt="">
+        </div>
+      </div>
+      <div class="flex ai-c jc-c gap-30 flex-wrap mt-30">
+        <ul class="list-unstyled flex flex-col gap-10">
+          <li>
+            <span class="title">{{'President' | translate}} : </span>
+            <span class="info">{{country.president}}</span>
+          </li>
+          <li>
+            <span class="title">{{'DateOfJoin' | translate}} : </span>
+            <span class="info">{{country.dateOfJoin}}</span>
+          </li>
+          <li>
+            <span class="title">{{'NationalEid' | translate}} : </span>
+            <span class="info">{{country.nationalEid}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Capital' | translate}} : </span>
+            <span class="info">{{country.capital}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Currency' | translate}} : </span>
+            <span class="info">{{country.currency}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Space' | translate}} : </span>
+            <span class="info">{{country.space}}</span>
+          </li>
+          <li>
+            <span class="title">{{'GeographicLocation' | translate}} : </span>
+            <span class="info">{{country.geographicLocation}}</span>
+          </li>
+        </ul>
+        <ul class="list-unstyled flex flex-col gap-10">
+          <li>
+            <span class="title">{{'Ambassador' | translate}} : </span>
+            <span class="info">{{country.ambassador}}</span>
+          </li>
+          <li>
+            <span class="title">{{'PostalAddress' | translate}} : </span>
+            <span class="info">{{country.postAddress}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Phone' | translate}} : </span>
+            <span class="info">{{country.phone}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Fax' | translate}} : </span>
+            <span class="info">{{country.fax}}</span>
+          </li>
+          <li>
+            <span class="title">{{'Email' | translate}} : </span>
+            <span class="info">
+              <a href="{{country.email}}" target="_blank">{{country.email}}</a>
+            </span>
+          </li>
+          <li>
+            <span class="title">{{'Site' | translate}} : </span>
+            <span class="info">
+              <a href="{{country.site}}" target="_blank">{{country.site}}</a>
+            </span>
+          </li>
+        </ul>
+      </div>
+      <div class="flex ai-c jc-c mt-30">
+        <a class="back" [routerLink]="'/country-data'" type="button">{{ 'Back' | translate }}</a>
+      </div>
+    </div>
+  </div>
+</div>

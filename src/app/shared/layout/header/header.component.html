@@ -1,0 +1,138 @@
+<div class="small-nav d-none d-md-flex">
+  <div class="english-data">
+    <ul class="list-unstyled">
+      <li>League of Arab States</li>
+      <li>Council of Arab Economic Unity</li>
+      <li>Training, Research and Studies Center</li>
+    </ul>
+  </div>
+  <div class="logo">
+    <div class="logo flex flex-col ai-c">
+      <div class="img">
+        <img src="assets/images/main_assets/header_logo.svg" alt="">
+      </div>
+    </div>
+  </div>
+  <div class="arabic-data">
+    <ul class="list-unstyled">
+      <li>جامعة الدول العربية</li>
+      <li>مجلس الوحدة الاقتصادية العربية</li>
+      <li>مركز التدريب و البحوث و الدراسات</li>
+    </ul>
+  </div>
+</div>
+<div class="small-nav d-md-none">
+  <div class="arabic-data">
+    <ul class="list-unstyled flex flex-col gap-10">
+      <li>جامعة الدول العربية</li>
+      <li>مجلس الوحدة الاقتصادية العربية</li>
+      <li>مركز التدريب و البحوث و الدراسات</li>
+      <li>
+        <button class="toggle-navbar"  type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <div class="img">
+            <img src="assets/images/icons/arrowDown.svg" alt="">
+          </div>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <div class="logo">
+    <div class="logo flex flex-col ai-c">
+      <div class="img">
+        <img src="assets/images/main_assets/header_logo.svg" alt="">
+      </div>
+    </div>
+  </div>
+</div>
+<nav class="navbar navbar-expand-xl navbar-light">
+  <!-- <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button> -->
+
+  <div class="collapse navbar-collapse jc-c" id="navbarSupportedContent">
+    <ul class="navbar-nav gap-15">
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="''" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
+          {{'Home' | translate}}
+        </a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="'/general-secretary'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
+          {{'General Secretary' | translate}}
+        </a>
+      </li>
+      <ng-container *ngFor="let item of menuItems">
+        <li class="nav-item" *ngIf="item.childs.length == 0">
+          <a class="nav-link" [routerLink]="'/'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
+            {{item.text}}
+          </a>
+        </li>
+        <li class="nav-item dropdown" dropdown *ngIf="item.childs.length > 0">
+          <a
+            dropdownToggle 
+            class="nav-link dropdown-toggle" 
+            id="dropdownMenuButton" 
+            data-mdb-toggle="dropdown" 
+            aria-expanded="false"
+            aria-controls="dropdown-animated">
+            <span (click)="toggleItem($event)">{{item.text}}</span>
+            <svg width="20" height="20" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="Medium/chevron-left">
+                <path id="Icon" d="M18.9321 9L12.9321 15L6.93213 9" stroke="#484C52" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </g>
+            </svg>          
+          </a>
+          <ul id="dropdown-animated" class="dropdown-menu" role="menu" aria-labelledby="dropdownMenuButton">
+            <li *ngFor="let child of item.childs">
+              <a class="dropdown-item" [routerLink]="'/category/1'">
+                {{child.text}}
+                <img src="assets/images/icons/black_arrow-left.svg" alt="" *ngIf="child.childs">
+              </a>
+              <!-- <a class="dropdown-item" [routerLink]="'/category/' + child.id">
+                {{child.text}}
+                <img src="assets/images/icons/black_arrow-left.svg" alt="" *ngIf="child.childs">
+              </a> -->
+              <ul class="dropdown-menu dropdown-submenu" *ngIf="child?.childs?.length! > 0">
+                <li *ngFor="let childChild of child?.childs">
+                  <a class="dropdown-item">{{childChild.text}}</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ng-container>
+      <li class="nav-item">
+        <a class="nav-link" href="https://economic-unity-council.netlify.app/" target="_blank">
+          {{'TrainingCenter' | translate}}
+        </a>
+      </li>
+      <div class="actions d-flex align-items-center" style="gap: 10px;">
+        <div class="btn-group" dropdown>
+          <button id="button-animated" dropdownToggle type="button" class="dropdown-toggle"
+            aria-controls="dropdown-animated">
+            <div class="language-icon">
+              <img src="assets/images/main_assets/egypt.svg" alt="" *ngIf="translate.currentLang == 'ar'">
+              <img src="assets/images/main_assets/usaLarge.png" alt="" *ngIf="translate.currentLang == 'en'">
+            </div>
+            <span class="caret"></span>
+          </button>
+          <ul id="dropdown-animated" *dropdownMenu class="dropdown-menu" role="menu" aria-labelledby="button-animated">
+            <li role="menuitem">
+              <a class="dropdown-item" (click)="changeCurrentLang('ar')">
+                <img src="assets/images/main_assets/Arabia.png" alt="">
+                {{ "AR" | translate }}
+              </a>
+            </li>
+            <li role="menuitem">
+              <a class="dropdown-item" (click)="changeCurrentLang('en')">
+                <img src="assets/images/main_assets/usa.png" alt="">
+                {{ "EN" | translate }}
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </ul>
+
+  </div>
+</nav>

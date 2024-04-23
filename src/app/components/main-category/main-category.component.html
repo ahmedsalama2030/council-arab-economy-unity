@@ -1,0 +1,45 @@
+<div class="main-category-page">
+  <div class="container">
+    <div class="row">
+      <div *ngFor="let post of posts" [ngClass]="{'col-md-12' : posts.length == 1, 'col-md-6': posts.length == 2, 'col-md-4': posts.length >= 3}" class="col-md-12">
+        <div class="post">
+          <div class="header">
+            <h2>{{ isDirRTL ? post?.titleAr : post.titleEn }}</h2>
+          </div>
+          <div class="content">
+            <div class="img">
+              <img src="assets/images/ghaza.jpg" alt="">
+              <!-- <img [src]="post.imageUrl" alt=""> -->
+            </div>
+            <div class="overlay"></div>
+            <span class="title">{{ isDirRTL ? post?.titleAr : post.titleEn }}</span>
+          </div>
+          <div class="article-details">
+            <div class="article-header">
+              <div class="user">
+                <div class="user-img">
+                  <div class="img">
+                    <img src="assets/images/User-Profile-PNG.png" alt="">
+                  </div>
+                </div>
+                <div class="user-name">{{post?.userName}}</div>
+              </div>
+              <div class="date">
+                <div class="img">
+                  <img src="assets/images/time.png" alt="">
+                </div>
+                <span>{{post?.datePublish}}</span>
+              </div>
+            </div>
+            <div class="article-content">
+              <p>{{article?.details}}</p>
+            </div>
+            <div class="article-footer">
+              <button class="readMore" [routerLink]="'/category/' + post.id + '/details'">read more</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,99 @@
+{
+  "pages": [
+    {
+      "id": 1,
+      "sort": "2",
+      "title": "الامين-العام",
+      "isShowHeader": true,
+      "parentId": "null",
+      "imageUrl": "",
+      "isActive": true
+    },
+    {
+      "id": 2,
+      "sort": "3",
+      "title": "اليات ولجان المجلس",
+      "isShowHeader": true,
+      "parentId": "null",
+      "imageUrl": "",
+      "isActive": true,
+      "childs": [
+        {
+          "id": 3,
+          "sort": "1",
+          "title": "آلية الاستثمار و التجارة ",
+          "isShowHeader": true,
+          "parentId": "2",
+          "imageUrl": "",
+          "isActive": true
+        },
+        {
+          "id": 4,
+          "sort": "3",
+          "title": "لجنة تخطيط  وتنسيق التجارة",
+          "isShowHeader": true,
+          "parentId": "2",
+          "imageUrl": "",
+          "isActive": true
+        },
+        {
+          "id": 5,
+          "sort": "3",
+          "title": "لجنة تطوير السوق العربية المشتركة",
+          "isShowHeader": true,
+          "parentId": "2",
+          "imageUrl": "",
+          "isActive": true
+        }
+      ]
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "titile": "test1 ",
+      "pageId": 1,
+      "details": "test test test test test test test test test test test test test test test test ",
+      "dateTime": "2024-04-19T18:12:00",
+      "sort": "1",
+      "userName": "ahmed salama"
+    },
+    {
+      "id": 2,
+      "titile": "test1 ",
+      "pageId": 1,
+      "details": "test test test test test test test test test test test test test test test test ",
+      "dateTime": "2024-04-19T18:12:00",
+      "sort": "2",
+      "userName": "ahmed salama"
+    }
+  ],
+  "articles": [
+    {
+      "id": 3,
+      "title": "آلية الاستثمار و التجارة ",
+      "details": "test test test test test test test test test test test test test test test ",
+      "dateTime": "2024-04-19T18:12:00",
+      "userName": "ahmed salama"
+    },
+    {
+      "id": 4,
+      "title": "لجنة تخطيط  وتنسيق التجارة",
+      "details": "test test test test test test test test test test test test test test test ",
+      "dateTime": "2024-04-19T18:12:00",
+      "userName": "ahmed salama"
+    },
+    {
+      "id": 5,
+      "title": "لجنة تطوير السوق العربية المشتركة",
+      "details": "test test test test test test test test test test test test test test test ",
+      "dateTime": "2024-04-19T18:12:00",
+      "userName": "ahmed salama"
+    }
+  ],
+  "setting": {
+    "id": 1,
+    "mainColor": "#3444",
+    "secondColor": "#4353"
+  }
+}

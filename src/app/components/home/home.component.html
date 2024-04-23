@@ -1,0 +1,38 @@
+
+<div class="home-page">
+  <div class="box">
+    <ul class="post-box">
+      <li *ngFor="let post of postItems.posts">
+        {{post.details}}
+      </li>
+      <!-- Add more posts as needed -->
+    </ul>
+    <div class="article">
+      <div class="lamp"></div>
+      <span class="d-none d-sm-block">{{ 'New_Articles' | translate }}</span>
+    </div>
+  </div>
+  <div class="home-carousel">
+    <div class="row ai-c home-c">
+      <div class="col-md-2 ol-sm-12">
+        <a [routerLink]="'/general-secretary'" [routerLinkActive]="'routerActive'">
+          <div class="img">
+            <img src="assets/images/GS-A.jpg" alt="">
+          </div>
+        </a>
+      </div>
+      <div class="col-md-8 ol-sm-12">
+        <div class="img">
+          <img src="assets/images/ghaza.jpg" alt="">
+        </div>
+      </div>
+      <div class="col-md-2 ol-sm-12">
+        <a [routerLink]="'/country-data'">
+          <div class="img">
+            <img src="assets/images/MembersNoFlags.jpg" alt="">
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

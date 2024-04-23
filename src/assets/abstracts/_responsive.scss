@@ -1,0 +1,58 @@
+/* For Desktop View */
+@media screen and (min-width: 1200px) {
+}
+
+@media screen and (max-width: 1199px) {
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1199px) {
+}
+
+@media screen and (max-width: 1023px) {
+}
+
+@media screen and (max-width: 991px) {
+}
+
+@media screen and (min-width: 768px) and (max-width: 991px) { 
+}
+
+@media screen and (max-width: 767px) { 
+}
+
+@media screen and (min-width: 641px) and (max-width: 767px) {
+}
+
+@media screen and (max-width: 640px) {
+  .home-c {
+    gap: 20px;
+  }
+}
+
+@media screen and (min-width: 550px) and (max-width: 640px) {
+}
+
+@media screen and (max-width: 541px) {
+  footer {
+    .footer-container {
+      .items {
+        width: 80% !important;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 431px) {
+}
+
+@media screen and (max-width: 415px) {
+}
+
+@media screen and (max-width: 395px) {
+}
+
+@media screen and (max-width: 376px) {
+}
+
+@media screen and (max-width: 361px) {
+}

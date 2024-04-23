@@ -1,0 +1,58 @@
+.box {
+  margin: 1em;
+  background: #eee;
+  position: relative;
+  overflow-x: hidden;
+  .post-box {
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    padding: 10px 0;
+    margin: 0;
+    list-style: none; /* Remove default list styles */
+    display: flex;
+    &:hover {
+      animation-play-state: paused; /* Pause animation on hover */
+    }
+  }
+  
+  .post-box li {
+    padding: 10px;
+    min-width: 600px;
+  }
+
+  .article {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    width: max-content;
+    background-color: #bb1919;
+    color: #fff;
+    position: absolute;
+    top: 0;
+    min-height: 64px;
+    .lamp {
+      width: 20px;
+      height: 20px;
+      background-color: #fff; /* Lamp color */
+      border-radius: 50%;
+      animation: lampFlash 0.5s infinite alternate; /* Adjust animation duration as needed */
+    }
+  }
+}
+
+.home-carousel {
+  margin: 0 1.5em;
+}
+
+@keyframes lampFlash {
+  0% {
+    // opacity: 0.2; /* Dim the lamp */
+    transform: scale(0);
+  }
+  100% {
+    // opacity: 1; /* Brighten the lamp */
+    transform: scale(1);
+  }
+}

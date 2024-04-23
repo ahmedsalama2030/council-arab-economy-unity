@@ -1,0 +1,39 @@
+.header {
+  margin-top: 1em;
+  background-color: #eee;
+  padding: 1em;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1em;
+  position: relative;
+  margin-bottom: 1em;
+  span.title {
+    background-color: #7E7E7E;
+    color: #fff;
+    padding: 5px;
+  }
+  .article-header {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    .user {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .date {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      .img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+<div class="page-wrapper" id="canvas-bookmark">
+  <app-header></app-header>
+  <!-- Page Body Start-->
+  <div class="page-body-wrapper">
+    <div class="page-body">
+      <main [@fadeInAnimation]="getRouterOutletState(o)">
+        <router-outlet #o="outlet"></router-outlet>
+      </main>
+    </div>
+  </div>
+  <app-footer></app-footer>
+  <!-- Page Body End-->
+</div>

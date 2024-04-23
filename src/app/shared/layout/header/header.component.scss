@@ -1,0 +1,74 @@
+@import '/src/assets/abstracts/variables';
+
+.small-nav {
+  background: #FFF;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 50px;
+  padding: 1em 0;
+}
+
+nav.navbar {
+  padding: 0.5rem 5rem;
+  background: #fff;
+  a.navbar-brand {
+    img {
+      width: 85px;
+      height: 85px;
+    }
+    span {
+      color: #252223;
+      text-align: center;
+      font-size: 11px;
+      font-weight: 400;
+    }
+  }
+  ul.navbar-nav {
+    li.nav-item {
+      a.nav-link {
+        color: $sharedGreyColor;
+        font-weight: 500;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        &::after { display: none; }
+      }
+    }
+  }
+}
+
+.dropdown-menu li {
+  position: relative;
+}
+.dropdown-menu .dropdown-submenu {
+  display: none;
+  position: absolute;
+  top: 10px;
+}
+.dropdown-menu > li:hover > .dropdown-submenu {
+  display: block;
+}
+
+.toggle-navbar {
+  background: transparent;
+  border: 1px solid #ccc;
+  border-radius: 7px;
+}
+
+button#button-animated {
+  background: transparent;
+  border: none;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  .language-icon {
+    width: 37px;
+    height: 37px;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

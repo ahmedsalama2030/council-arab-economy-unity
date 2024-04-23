@@ -1,0 +1,24 @@
+<div class="country-data">
+  <div class="container">
+    <div class="flex flex-col ai-c gap-20 my-20">
+      <h2 class="text-center">{{'Member States' | translate}}</h2>
+      <div class="row ai-c">
+        <div class="col-md-4">
+          <ul class="list-unstyled flex flex-col gap-20">
+            <li class="flex ai-c gap-10" *ngFor="let country of countryMembers">
+              <div class="img">
+                <img [src]="country.logo" alt="">
+              </div>
+              <a [routerLink]="'/country-data/country-details/' + country.id">{{ isDirRTL ? country.nameAr : country.nameEn }}</a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-8">
+          <div class="img">
+            <img src="assets/images/ArabCountriesMap.jpg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

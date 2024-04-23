@@ -1,0 +1,46 @@
+@import '/src/assets/abstracts/variables';
+
+footer.footer {
+  background: #F6F6F6;
+  text-align: right;
+  margin-top: 5em;
+  position: relative;
+  .footer-container {
+    padding: 2em 0em 3em;
+    .items {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 25px;
+      width: 50%;
+      margin: auto;
+      .logo {
+        .img {
+          width: 160px;
+          height: 160px;
+        }
+        span {
+          color: #252223;
+          text-align: center;
+          font-size: 11px;
+          font-weight: 400;
+        }
+      }
+      .body {
+        p {
+          text-align: center;
+          color: #4B5768;
+          font-size: 18px;
+          line-height: 160%;
+          font-weight: 400;
+        }
+      }
+    }
+  }
+  .copyright-box {
+    padding: 20px 10px;
+    color: $mainBlackColor;
+    text-align: center;
+    font-weight: 700;
+  }
+}
