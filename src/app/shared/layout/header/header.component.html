@@ -64,7 +64,6 @@
       <ng-container *ngFor="let item of menuItems">
         <li class="nav-item" *ngIf="item.childs.length == 0">
           <a class="nav-link" [routerLink]="'/'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
-            {{item.text}}
                 <span class="title" [innerHTML]="isDirRTL ? item?.textAr : item?.textEn"></span>
 
           </a>
