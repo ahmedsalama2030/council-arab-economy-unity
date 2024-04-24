@@ -103,7 +103,7 @@
 
     </div>
     <div class="col-12 col-md-4 mt-5" *ngIf="posts.length>2">
-      <div class="card bg-dark text-white card-click">
+      <div  (click)="goDetail(posts[2]?.id)"class="card bg-dark text-white card-click">
         <img height="300px" class="card-img hover-mian" [src]="images+posts[2].url">
         <div class="card-img-overlay">
           <h6 class="card-title ">
@@ -129,7 +129,7 @@
   <div class="row justify-content-center  margin-top-more ">
 
     <div class="col-12 col-md-4" *ngIf="posts.length>3">
-      <div class="card bg-dark text-white card-click">
+      <div (click)="goDetail(posts[3]?.id)" class="card bg-dark text-white card-click">
         <img height="300px" class="card-img hover-mian" [src]="images+posts[3].url">
         <div class="card-img-overlay">
           <h6 class="card-title ">
@@ -150,7 +150,7 @@
     </div>
 
     <div class="col-12 col-md-3" *ngIf="posts.length>4">
-      <div class="card bg-dark text-white card-click">
+      <div (click)="goDetail(posts[4]?.id)" class="card bg-dark text-white card-click">
         <img height="300px" class="card-img hover-mian" [src]="images+posts[4].url">
         <div class="card-img-overlay">
           <h6 class="card-title ">
@@ -170,7 +170,7 @@
 
     </div>
     <div class="col-12 col-md-4" *ngIf="posts.length>5">
-      <div class="card bg-dark text-white card-click">
+      <div (click)="goDetail(posts[5]?.id)" class="card bg-dark text-white card-click">
         <img height="300px" class="card-img hover-mian" [src]="images+posts[5].url">
         <div class="card-img-overlay">
           <h6 class="card-title ">
