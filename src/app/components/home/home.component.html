@@ -2,9 +2,11 @@
 <div class="home-page">
   <div class="box">
     <ul class="post-box">
-      <li *ngFor="let post of headers">
-      <div class="inline p-0 m-0" [innerHTML]="isDirRTL ? post?.titleAr : post?.titleEn"></div>
-
+      <li *ngFor="let post of headers" class="p-0">
+      <span  (click)="goDetail(posts[1]?.id)" class="inline p-0 m-0  main-font"  >{{isDirRTL ? post?.titleAr : post?.titleEn}}</span>
+        <span class="img">
+          <img class="rounded p-0" style="height: 30px ; width:40px; margin:5px" [src]="images+post.url" [alt]="post.id">
+        </span>
       </li>
       <!-- Add more posts as needed -->
     </ul>
@@ -18,22 +20,175 @@
       <div class="col-md-2 ol-sm-12">
         <a [routerLink]="'/general-secretary'" [routerLinkActive]="'routerActive'">
           <div class="img">
-            <img src="assets/images/GS-A.jpg" alt="">
+            <img class="main-img" src="assets/images/GS-A.jpg" alt="">
           </div>
         </a>
       </div>
       <div class="col-md-8 ol-sm-12">
         <div class="img">
-          <img src="assets/images/ghaza.jpg" alt="">
+          <img src="assets/images/Gaza.png" alt="">
         </div>
       </div>
       <div class="col-md-2 ol-sm-12">
         <a [routerLink]="'/country-data'">
           <div class="img">
-            <img src="assets/images/MembersNoFlags.jpg" alt="">
+            <img  class="main-img main-img-2"src="assets/images/MembersNoFlags.jpg" alt="">
           </div>
         </a>
       </div>
     </div>
+      <div class="row ai-c home-c">
+        <div class="col-md-2 ol-sm-12">
+          <iframe width="100%" height="258" src="https://www.youtube.com/embed/LlzzIDlthGA"
+            title="مقره القاهرة..  ما مهام وأهداف مجلس الوحدة الاقتصادية العربية؟" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-8 col-12">
+            <div *ngIf="posts.length>0" (click)="goDetail(posts[0]?.id)" class="card bg-dark text-white card-click">
+              <img height="300px" class="card-img  " [src]="images+posts[0].url" alt="Card image">
+              <div class="card-img-overlay">
+                <h6 class="card-title "><span class="bg-danger d-inline-block p-1 rounded ">{{posts[0].headerTextAr}}</span></h6>
+                <p class="card-text">{{isDirRTL ? posts[1]?.titleAr : posts[0]?.titleEn}}</p>
+
+                <p class="card-text">
+                  <img [@imageScale]="imageState" (mouseenter)="imageState = 'hovered'" (mouseleave)="imageState = 'normal'"
+                    width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+                  {{posts[1]?.userName}}
+                  <img width="10" height="20" src="assets/images/time.png" alt="">
+                  <span>{{posts[1]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+                </p>
+              </div>
+
+          </div>
+
+        </div>
+        <div class="col-md-2 ol-sm-12">
+          <a [routerLink]="'/country-data'">
+            <div class="img">
+              <img class="main-img main-img-2" src="assets/images/states.jpg" alt="">
+            </div>
+          </a>
+        </div>
+      </div>
   </div>
-</div>
+  <div class="row justify-content-center aticles">
+    <div class="col-12 col-md-11 title">
+      <div class="elespare-widget-title-section title-style-1 elespare-right">
+        <h4 class="elespare-widget-title"><span class="elespare-section-title-before"></span><span
+            class="elespare-section-title">المقالات </span><span class="elespare-section-title-after"></span></h4>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center   "  *ngIf="posts.length>1">
+
+    <div class="col-12 col-md-7">
+      <div (click)="goDetail(posts[1]?.id)" class="card bg-dark text-white card-click">
+        <img   height="300px" class="card-img  " [src]="images+posts[1].url" alt="Card image">
+        <div class="card-img-overlay">
+          <h6 class="card-title "><span class="bg-danger d-inline-block p-1 rounded ">{{posts[1].headerTextAr}}</span></h6>
+                <p class="card-text">{{isDirRTL ? posts[1]?.titleAr : posts[1]?.titleEn}}</p>
+
+          <p class="card-text">
+            <img [@imageScale]="imageState" (mouseenter)="imageState = 'hovered'" (mouseleave)="imageState = 'normal'" width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{posts[1]?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{posts[1]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-4 mt-5" *ngIf="posts.length>2">
+      <div class="card bg-dark text-white card-click">
+        <img height="300px" class="card-img hover-mian" [src]="images+posts[2].url">
+        <div class="card-img-overlay">
+          <h6 class="card-title ">
+            <span class="bg-danger d-inline-block p-1 rounded ">{{posts[2].headerTextAr}}</span>
+          </h6>
+          <p class="card-text">{{isDirRTL ? posts[2]?.titleAr : posts[2]?.titleEn}}</p>
+
+          <p class="card-text">
+            <img width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{posts[2]?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{posts[1]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+
+
+  </div>
+  <div class="row justify-content-center  margin-top-more ">
+
+    <div class="col-12 col-md-4" *ngIf="posts.length>3">
+      <div class="card bg-dark text-white card-click">
+        <img height="300px" class="card-img hover-mian" [src]="images+posts[3].url">
+        <div class="card-img-overlay">
+          <h6 class="card-title ">
+            <span class="bg-danger d-inline-block p-1 rounded ">{{posts[3].headerTextAr}}</span>
+          </h6>
+          <p class="card-text">{{isDirRTL ? posts[2]?.titleAr : posts[3]?.titleEn}}</p>
+
+          <p class="card-text">
+            <img width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{posts[3]?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{posts[3]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-12 col-md-3" *ngIf="posts.length>4">
+      <div class="card bg-dark text-white card-click">
+        <img height="300px" class="card-img hover-mian" [src]="images+posts[4].url">
+        <div class="card-img-overlay">
+          <h6 class="card-title ">
+            <span class="bg-danger d-inline-block p-1 rounded ">{{posts[4].headerTextAr}}</span>
+          </h6>
+          <p class="card-text">{{isDirRTL ? posts[2]?.titleAr : posts[4]?.titleEn}}</p>
+
+          <p class="card-text">
+            <img width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{posts[3]?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{posts[4]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+    <div class="col-12 col-md-4" *ngIf="posts.length>5">
+      <div class="card bg-dark text-white card-click">
+        <img height="300px" class="card-img hover-mian" [src]="images+posts[5].url">
+        <div class="card-img-overlay">
+          <h6 class="card-title ">
+            <span class="bg-danger d-inline-block p-1 rounded ">{{posts[5].headerTextAr}}</span>
+          </h6>
+          <p class="card-text">{{isDirRTL ? posts[2]?.titleAr : posts[5]?.titleEn}}</p>
+
+          <p class="card-text">
+            <img width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{posts[5]?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{posts[4]?.datePublish | date:" yyyy-MM-dd "}}</span>
+
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+

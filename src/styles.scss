@@ -31,3 +31,108 @@ body {
     transform: translateX(-100%); /* Slide to the right */
   }
 }
+.main-font{
+  font-size: 1.1rem !important;
+  font-weight: bold  !important;
+}
+.header-font {
+  font-size: 1.2rem !important;
+  font-weight: bold !important;
+}
+.main-img{
+  border-radius: 0px 30px 0 23px;
+}
+.main-img-2 {
+  border-radius: 30px 0px 0 23px;
+}
+.card-img-overlay{
+  top:auto;
+bottom: 0;
+}
+.hover-mian :hover{
+transform: scale(1.2);
+}
+
+.hover-mian {
+  transition: transform .2s;
+}
+
+::selection {
+  background-color: #dc3545;
+  /* Change the background color */
+  color : #fff;
+  /* Change the text color */
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #77955a;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #3c6911;
+}
+.card-img-overlay{
+ background:  linear-gradient(rgb(163 158 158 / 20%), rgb(0 0 0 / 50%)) !important;
+}
+
+.margin-top-more {
+  margin-top: 5rem !important;
+}
+.margin-top-category{
+  margin-top: 1rem !important;
+}
+.cursor-pointer{
+  cursor:pointer
+}
+
+.elespare-widget-title-section.title-style-1 .elespare-widget-title {
+  position: relative;
+  margin-bottom: 15px;
+  margin-top: 0px;
+  padding-bottom: 10px;
+  line-height: 1.2;
+}
+.elespare-widget-title-section .elespare-widget-title {
+  font-size: 20px;
+}
+.elespare-widget-title-section.title-style-1 .elespare-widget-title .elespare-section-title-before {
+  display: inline-block;
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #BBDBC3;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+elementor-1867 .elementor-element.elementor-element-a8aa8bf .elespare-widget-title-section.title-style-1 .elespare-widget-title .elespare-section-title-before {
+  background-color: #efefef;
+}
+elementor-1867 .elementor-element.elementor-element-a8aa8bf .elespare-widget-title-section.title-style-1 .elespare-widget-title .elespare-section-title-after {
+  background-color: #BBDBC3;
+}
+.elementor-element.elespare-section-title-elespare-right .elespare-widget-title-section.title-style-1 .elespare-widget-title .elespare-section-title-after {
+  left: 0;
+  right: inherit;
+}
+.elespare-widget-title-section.title-style-1 .elespare-widget-title .elespare-section-title-after {
+  display: inline-block;
+  content: "";
+  width: 50px;
+  height: 3px;
+  background-color: #3c6911;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}

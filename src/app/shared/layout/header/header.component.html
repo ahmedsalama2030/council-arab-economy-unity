@@ -51,7 +51,7 @@
 
   <div class="collapse navbar-collapse jc-c" id="navbarSupportedContent">
     <ul class="navbar-nav gap-15">
-      <li class="nav-item">
+      <li class="nav-item header-font">
         <a class="nav-link" [routerLink]="''" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
           {{'Home' | translate}}
         </a>
@@ -62,8 +62,8 @@
         </a>
       </li> -->
       <ng-container *ngFor="let item of menuItems">
-        <li class="nav-item" *ngIf="item.childs.length == 0">
-          <a class="nav-link" [routerLink]="'/'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
+        <li   class="nav-item header-font cursor " *ngIf="item.childs.length == 0">
+          <a class="nav-link" [routerLink]="'/category/'+item.id+'/details'" [routerLinkActive]="'routerActive'" [routerLinkActiveOptions]="{exact: true}">
                 <span class="title" [innerHTML]="isDirRTL ? item?.textAr : item?.textEn"></span>
 
           </a>

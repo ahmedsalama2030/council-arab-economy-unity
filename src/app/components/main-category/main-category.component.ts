@@ -50,8 +50,25 @@ export class MainCategoryComponent extends AppComponentBase implements OnInit {
     this.mainService
       .GetPostByHeaderLanding(this.categoryId)
       .subscribe((posts: any) => {
-        // this.posts.push(posts.data)
-        this.posts = posts.data;
+        let headers = posts.data;
+        headers.forEach((header: any) => {
+          const parser = new DOMParser();
+
+          // Parse the HTML string
+          const htmlDocument1 = parser.parseFromString(
+            header.titleAr,
+            'text/html'
+          );
+          const htmlDocument2 = parser.parseFromString(
+            header.titleEn,
+            'text/html'
+          );
+          // Get the text content
+          header.titleAr = htmlDocument1.documentElement.textContent;
+          header.titleEn = htmlDocument2.documentElement.textContent;
+        });
+
+        this.posts = headers;
       });
   }
 
@@ -61,5 +78,8 @@ export class MainCategoryComponent extends AppComponentBase implements OnInit {
     this.categoryId = Number(this.activatedRoute.snapshot.params['categoryId']);
 
     this.GetPostByHeaderLanding();
+  }
+  goDetail(id: any) {
+    this.router.navigateByUrl('/category/' + id + '/details');
   }
 }

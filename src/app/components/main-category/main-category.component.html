@@ -1,47 +1,34 @@
 <div class="main-category-page">
   <div class="container">
-    <div class="row">
+    <div class="row margin-top-category">
       <!-- [ngClass]="{'col-md-3' : posts.length == 1, 'col-md-3': posts.length == 2, 'col-md-3': posts.length >= 3}" -->
-      <div *ngFor="let post of posts"  [ngClass]="{'col-md-5' : posts.length == 1, 'col-md-4': posts.length == 2, 'col-md-3': posts.length >= 3}"class="col-md-3">
-        <div class="post">
-          <div class="header my-3">
+      <ng-container *ngFor="let post of posts">
+  <div (click)="goDetail(post.id)" class="col-12  cursor-pointer col-md-4">
+    <div class="row justify-content-center  margin-top-more ">
+      <div class="card bg-dark text-white card-click">
+        <img height="300px" class="card-img hover-mian" [src]="images+post.url">
+        <div class="card-img-overlay">
+          <h6 class="card-title ">
+            <span class="bg-danger d-inline-block p-1 rounded "> {{isDirRTL ? post?.headerTextAr :
+              post?.headerTextEn}}</span>
+          </h6>
+          <p class="card-text">{{isDirRTL ? post?.titleAr : post?.titleEn}}</p>
 
-           </div>
-          <div class="content">
-            <div class="img">
-              <img class="rounded" style="height: 300px;" [src]="images+post.url" [alt]="post.id">
-              <!-- <img [src]="post.imageUrl" alt=""> -->
-            </div>
-            <div class="overlay"></div>
-            <div class="title" [innerHTML]="isDirRTL ? post?.titleAr : post.titleEn"></div>
+          <p class="card-text">
+            <img width="10" height="10" src="assets/images/User-Profile-PNG.png" alt="">
+            {{post?.userName}}
+            <img width="10" height="20" src="assets/images/time.png" alt="">
+            <span>{{post?.datePublish | date:" yyyy-MM-dd "}}</span>
 
-          </div>
-          <div class="article-details">
-            <div class="article-header">
-              <div class="user">
-                <div class="user-img">
-                  <div class="img">
-                    <img src="assets/images/User-Profile-PNG.png" alt="">
-                  </div>
-                </div>
-                <div class="user-name">{{post?.userName}}</div>
-              </div>
-              <div class="date">
-                <div class="img">
-                  <img src="assets/images/time.png" alt="">
-                </div>
-                <span>{{post?.datePublish | date:"HH:mm yyyy-MM-dd "}}</span>
-              </div>
-            </div>
-            <div class="article-content">
-              <p>{{article?.details}}</p>
-            </div>
-            <div class="article-footer">
-              <button class="readMore" [routerLink]="'/category/' + post.id + '/details'">{{'ReadMe' | translate}}</button>
-            </div>
-          </div>
+          </p>
         </div>
       </div>
+
+    </div>
+  </div>
+      </ng-container>
+
+
     </div>
   </div>
 </div>
